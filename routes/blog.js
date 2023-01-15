@@ -1,18 +1,15 @@
 const express = require('express');
+const { createBlog, findBlog } = require('../controllers/blogController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json({ text: 'all posts' })
-})
+router.get('/', findBlog)
 
 router.get('/:id', (req, res) => {
-    res.json({ text: 'all posts' })
+    console.log('res: ' + res);
 })
 
-router.post('/', (req, res) => {
-    res.json({ text: 'all posts' })
-})
+router.post('/', createBlog)
 
 router.delete('/:id', (req, res) => {
     res.json({ text: 'delete posts' })
