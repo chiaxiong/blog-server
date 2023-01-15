@@ -11,7 +11,9 @@ mongoose.connect(process.env.DATABASE, {
     useUnifiedTopology: true,
 })
     .then(() => app.listen(process.env.PORT, () => {
-        app.listen(process.env.PORT)
+        app.listen(process.env.PORT, () => {
+            console.log(`listening to port: ${process.env.PORT}`);
+        });
     }))
     .catch(err => {
         console.log(`Could not connect to MongoDB. ERROR: ${err}`);
