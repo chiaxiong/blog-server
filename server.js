@@ -18,5 +18,3 @@ mongoose.connect(process.env.DATABASE, {
         console.log(`Could not connect to MongoDB. ERROR: ${err}`);
         process.exit(1);
     });
-
-
